@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://buo6qjwexcyrf"]
 
 [ext_resource type="Script" uid="uid://cpsmlmyt2sry0" path="res://Scripts/Props/hazards/wind_hazard.gd" id="1_8d3yp"]
-[ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="2_q7psw"]
-[ext_resource type="Script" uid="uid://dt04kfvdc21nb" path="res://addons/godot_3d_cursor/scripts/3d_cursor.gd" id="3_5nuem"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8d3yp"]
 size = Vector3(4.4358826, 3.774353, 1)
@@ -18,12 +16,12 @@ initial_velocity_min = 20.0
 initial_velocity_max = 40.0
 gravity = Vector3(0, 0, 0)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7psw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcyt7"]
 transparency = 1
 albedo_color = Color(0.38039216, 0.7058824, 1, 0.59607846)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q7psw"]
-material = SubResource("StandardMaterial3D_q7psw")
+material = SubResource("StandardMaterial3D_wcyt7")
 size = Vector3(1, 0.05, 0.05)
 
 [node name="WindHazard" type="Node3D" unique_id=428159035]
@@ -40,14 +38,3 @@ shape = SubResource("BoxShape3D_8d3yp")
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=2007181653]
 process_material = SubResource("ParticleProcessMaterial_jbupt")
 draw_pass_1 = SubResource("BoxMesh_q7psw")
-
-[node name="3DCursor" type="Marker3D" parent="." unique_id=524153482 groups=["Plugin3DCursor"] instance=ExtResource("2_q7psw")]
-visible = false
-gizmo_extents = 0.0
-script = ExtResource("3_5nuem")
-metadata/cursor_id = 0
-metadata/size_scale = 1.0
-metadata/show_title_label = true
-metadata/show_number_label = true
-metadata/scale_affect_labels = true
-metadata/_edit_lock_ = true
