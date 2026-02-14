@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bl8xvfb0rau0p"]
+
+[ext_resource type="Script" uid="uid://b5hmsbm4y6iar" path="res://Scripts/Components/wind_component.gd" id="1_rea8y"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1pj4f"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 4, 1)
+angle_min = 1.0728835e-05
+angle_max = 5.000011
+direction = Vector3(-1, 0, 0)
+spread = 15.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7psw"]
+transparency = 1
+albedo_color = Color(0.38039216, 0.7058824, 1, 0.59607846)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h8fgx"]
+material = SubResource("StandardMaterial3D_q7psw")
+size = Vector3(1, 0.05, 0.05)
+
+[node name="WindComponent" type="Node3D" unique_id=330709186]
+script = ExtResource("1_rea8y")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1769814218]
+process_material = SubResource("ParticleProcessMaterial_1pj4f")
+draw_pass_1 = SubResource("BoxMesh_h8fgx")

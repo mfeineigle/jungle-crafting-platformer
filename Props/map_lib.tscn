@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7tqrgjvg2fwo"]
 
-[ext_resource type="PackedScene" uid="uid://cc0bsslqrr3g2" path="res://Props/floor_dirt.tscn" id="1_3s55m"]
+[ext_resource type="PackedScene" uid="uid://cc0bsslqrr3g2" path="res://Props/floors/floor_dirt.tscn" id="1_3s55m"]
 [ext_resource type="PackedScene" uid="uid://b48hjxxqrm7of" path="res://Props/grass_clump.tscn" id="2_mc5y0"]
 [ext_resource type="PackedScene" uid="uid://djsn6hw6sy83s" path="res://Props/water.tscn" id="3_x4r7f"]
 [ext_resource type="PackedScene" uid="uid://ploidsusuen2" path="res://Props/lava.tscn" id="4_8w0kx"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://peostwdt47g0" path="res://Props/fern_1.tscn" id="6_oyisl"]
 [ext_resource type="PackedScene" uid="uid://bsygo65u1j61h" path="res://Props/rock_1.tscn" id="7_d62nj"]
 [ext_resource type="PackedScene" uid="uid://cm0rd2xjachya" path="res://Props/cloud_1.tscn" id="8_x37y4"]
-[ext_resource type="PackedScene" uid="uid://b6434eo6lswrs" path="res://Props/rock_wall.tscn" id="9_ftri4"]
-[ext_resource type="PackedScene" uid="uid://dest5ugxp5krp" path="res://Props/rock_ledge.tscn" id="10_kq35o"]
+[ext_resource type="PackedScene" uid="uid://b6434eo6lswrs" path="res://Props/walls/rock_wall.tscn" id="9_ftri4"]
+[ext_resource type="PackedScene" uid="uid://dest5ugxp5krp" path="res://Props/floors/rock_ledge.tscn" id="10_kq35o"]
 
 [node name="map_lib" type="Node3D" unique_id=1778733230]
 

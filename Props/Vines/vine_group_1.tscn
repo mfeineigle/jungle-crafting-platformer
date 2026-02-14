@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bd7eov2tixmqu"]
+
+[ext_resource type="PackedScene" uid="uid://w1yam5gaaps4" path="res://Assets/blender_stuff/vine_group_1.glb" id="1_yqnni"]
+[ext_resource type="Script" uid="uid://dxsyj2w4rd2o7" path="res://Scripts/Props/vine_group.gd" id="2_oxykd"]
+
+[node name="vine_group_1" unique_id=1325100206 instance=ExtResource("1_yqnni")]
+script = ExtResource("2_oxykd")

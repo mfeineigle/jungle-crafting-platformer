@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://darce5iygie2w" path="res://Props/Traps/bear.tscn" id="9_q5lgr"]
 [ext_resource type="PackedScene" uid="uid://yw5l62jqk8kr" path="res://Props/Traps/bear_path.tscn" id="9_xxxi4"]
 [ext_resource type="PackedScene" uid="uid://dfpatff4d5okj" path="res://addons/godot_3d_cursor/scenes/3d_cursor.tscn" id="11_4c4gq"]
-[ext_resource type="PackedScene" uid="uid://3rr4uyg2mcjc" path="res://Props/vine_group.tscn" id="12_3e7p2"]
+[ext_resource type="PackedScene" uid="uid://3rr4uyg2mcjc" path="res://Props/Vines/vine_group_5.tscn" id="12_3e7p2"]
 [ext_resource type="PackedScene" uid="uid://tn3gobco8e5m" path="res://Props/pillar.tscn" id="12_4c4gq"]
-[ext_resource type="PackedScene" uid="uid://mm4t0705eltt" path="res://Props/swing_vine.tscn" id="13_3e7p2"]
+[ext_resource type="PackedScene" uid="uid://mm4t0705eltt" path="res://Props/Vines/swing_vine.tscn" id="13_3e7p2"]
 [ext_resource type="PackedScene" uid="uid://buo6qjwexcyrf" path="res://Props/hazards/wind_hazard.tscn" id="14_dxjb0"]
 
 [sub_resource type="Environment" id="Environment_84iim"]
@@ -783,7 +783,7 @@ shape = SubResource("BoxShape3D_xxxi4")
 [node name="BearPath" parent="." unique_id=1462696884 instance=ExtResource("9_xxxi4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.103075, 60.368927, -193.63919)
 
-[node name="vine_group" parent="." unique_id=1118997187 instance=ExtResource("12_3e7p2")]
+[node name="vine_group" parent="." unique_id=233995421 instance=ExtResource("12_3e7p2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.864235, 103.098885, -185.53152)
 wind_direction = Vector3(1, 0, 0)
 

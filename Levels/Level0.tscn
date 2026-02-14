@@ -2,9 +2,9 @@
 
 [ext_resource type="MeshLibrary" uid="uid://bc3ahwiy3ursw" path="res://Props/mesh_lib.meshlib" id="1_6sq0g"]
 [ext_resource type="Script" uid="uid://t28wjyjtbgrv" path="res://Scripts/Levels/level.gd" id="1_rwetj"]
-[ext_resource type="PackedScene" uid="uid://b6434eo6lswrs" path="res://Props/rock_wall.tscn" id="3_6m7ph"]
-[ext_resource type="PackedScene" uid="uid://dest5ugxp5krp" path="res://Props/rock_ledge.tscn" id="4_bgmvv"]
-[ext_resource type="PackedScene" uid="uid://cvwe42ewc47yh" path="res://Props/rock_ledge_falling.tscn" id="6_5j4ii"]
+[ext_resource type="PackedScene" uid="uid://b6434eo6lswrs" path="res://Props/walls/rock_wall.tscn" id="3_6m7ph"]
+[ext_resource type="PackedScene" uid="uid://dest5ugxp5krp" path="res://Props/floors/rock_ledge.tscn" id="4_bgmvv"]
+[ext_resource type="PackedScene" uid="uid://cvwe42ewc47yh" path="res://Props/floors/rock_ledge_falling.tscn" id="6_5j4ii"]
 [ext_resource type="PackedScene" uid="uid://bj8oo0gun68no" path="res://Props/check_point.tscn" id="7_e6li3"]
 [ext_resource type="PackedScene" uid="uid://dd7eb77vjh2m" path="res://Levels/level_change.tscn" id="7_h2dl5"]
 [ext_resource type="PackedScene" uid="uid://c5aeuir46bmid" path="res://Levels/Level1.tscn" id="8_u74sm"]
