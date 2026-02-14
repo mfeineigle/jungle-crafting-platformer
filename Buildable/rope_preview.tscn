@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c27s8ewlstxiw"]
+
+[ext_resource type="Script" uid="uid://b3kfeinq7jc2f" path="res://Scripts/Items/rope_preview.gd" id="1_0xf4g"]
+[ext_resource type="PackedScene" uid="uid://co2e7p0bq25j8" path="res://Buildable/rope_segment.tscn" id="2_7r6o6"]
+[ext_resource type="PackedScene" uid="uid://cedorkqunauyp" path="res://Buildable/rope.tscn" id="3_q4gg2"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0xf4g")
+item_path = "res://Items/Resources/rope.tres"
+rope_segment_scene = ExtResource("2_7r6o6")
+rope = ExtResource("3_q4gg2")

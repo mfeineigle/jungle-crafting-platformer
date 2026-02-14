@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bk8jxl4qoxmyf"]
+
+[ext_resource type="Texture2D" uid="uid://mhsdqhty46yy" path="res://Assets/pixel_art/stick.png" id="1_t7cpo"]
+[ext_resource type="Script" uid="uid://8g1k5ly4ship" path="res://Items/Resources/Item.gd" id="1_u4i4u"]
+
+[resource]
+script = ExtResource("1_u4i4u")
+id = "stick"
+display_name = "Stick"
+icon = ExtResource("1_t7cpo")
+recipe_learn = "res://Items/Resources/ladder.tres"
+recipe_msg = "With a few more sticks, maybe I could build a ladder."
+metadata/_custom_type_script = "uid://8g1k5ly4ship"

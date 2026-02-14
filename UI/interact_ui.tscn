@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dprcvwgkqyi11"]
+
+[ext_resource type="Script" uid="uid://c23ey4yxx32up" path="res://Scripts/UI/interact_ui.gd" id="1_xktih"]
+[ext_resource type="Script" uid="uid://gip06h8xkgys" path="res://Scripts/UI/selection_wheel.gd" id="2_kpa62"]
+
+[node name="InteractUI" type="CanvasLayer" unique_id=1239765968 groups=["ui"]]
+script = ExtResource("1_xktih")
+
+[node name="selection_wheel" type="Control" parent="." unique_id=883846071]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kpa62")
+line_color = Color(0.8132577, 0.8132577, 0.81325763, 1)
+highlight_color = Color(0.006131184, 0.20830193, 0.90434796, 1)
+options = [0, 1, 2, 5]

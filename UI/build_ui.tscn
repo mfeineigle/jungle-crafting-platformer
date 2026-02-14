@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dg56ljdr46yx0"]
+
+[ext_resource type="Script" uid="uid://c4xljgpgiouhy" path="res://Scripts/UI/build_ui.gd" id="1_uhjuk"]
+[ext_resource type="Theme" uid="uid://bicqcpu6gdxak" path="res://UI/border_theme.tres" id="2_rcn5b"]
+
+[node name="BuildUI" type="CanvasLayer" unique_id=309223750 groups=["ui"]]
+script = ExtResource("1_uhjuk")
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=1289336847]
+oversampling_override = 1.0
+
+[node name="popupLabel" type="Label" parent="PopupPanel" unique_id=1057980152]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="buildPanel" type="PanelContainer" parent="." unique_id=1023584765]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+theme = ExtResource("2_rcn5b")
+
+[node name="MarginContainer" type="MarginContainer" parent="buildPanel" unique_id=447916010]
+layout_mode = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buildPanel/MarginContainer" unique_id=1394036395]
+layout_mode = 2
+
+[node name="build_header" type="HBoxContainer" parent="buildPanel/MarginContainer/VBoxContainer" unique_id=848939063]
+layout_mode = 2
+
+[node name="build_label" type="Label" parent="buildPanel/MarginContainer/VBoxContainer/build_header" unique_id=266546609]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Buildables"
+
+[node name="build_close_button" type="Button" parent="buildPanel/MarginContainer/VBoxContainer/build_header" unique_id=837875204]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X"
+
+[node name="buildMenu" type="GridContainer" parent="buildPanel/MarginContainer/VBoxContainer" unique_id=977134485]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2

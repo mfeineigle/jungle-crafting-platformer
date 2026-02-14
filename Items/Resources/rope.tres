@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bk82jqgq06pgs"]
+
+[ext_resource type="Texture2D" uid="uid://ndyuo0rpdvxm" path="res://Assets/pixel_art/rope.png" id="1_aumon"]
+[ext_resource type="Script" uid="uid://8g1k5ly4ship" path="res://Items/Resources/Item.gd" id="1_ctq6a"]
+[ext_resource type="PackedScene" uid="uid://c27s8ewlstxiw" path="res://Buildable/rope_preview.tscn" id="1_ga2fp"]
+[ext_resource type="Resource" uid="uid://bs6ygwanlunm1" path="res://Items/Resources/vine.tres" id="4_3o84j"]
+
+[resource]
+script = ExtResource("1_ctq6a")
+id = "rope"
+display_name = "Rope"
+icon = ExtResource("1_aumon")
+inputs = Array[ExtResource("1_ctq6a")]([ExtResource("4_3o84j"), ExtResource("4_3o84j")])
+buildable = ExtResource("1_ga2fp")
+build_offset_y = -1.8
+metadata/_custom_type_script = "uid://8g1k5ly4ship"

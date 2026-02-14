@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3 uid="uid://bicqcpu6gdxak"]
+
+[ext_resource type="Texture2D" uid="uid://ci6ivafjy6u5g" path="res://Assets/pixel_art/borders.png" id="1_mg8jf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyjol"]
+atlas = ExtResource("1_mg8jf")
+region = Rect2(0, 0, 64, 63.999996)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i4k6b"]
+texture = SubResource("AtlasTexture_pyjol")
+texture_margin_left = 11.0
+texture_margin_top = 11.0
+texture_margin_right = 11.0
+texture_margin_bottom = 11.0
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_i4k6b")

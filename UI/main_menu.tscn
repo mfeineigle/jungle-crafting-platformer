@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://cc7ntxl11e3lr"]
+
+[ext_resource type="Script" uid="uid://d2gjq1rpfuw1h" path="res://Scripts/UI/main_menu.gd" id="1_p8ccj"]
+
+[sub_resource type="Environment" id="Environment_5yyqw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8ccj"]
+albedo_color = Color(0, 0, 0.9254902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tk8dj"]
+material = SubResource("StandardMaterial3D_p8ccj")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p8ccj"]
+
+[sub_resource type="Animation" id="Animation_p8ccj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartMesh:mesh:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="Animation" id="Animation_d8nwk"]
+resource_name = "button_pressed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartMesh:mesh:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5, 0.4, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4cwpn"]
+_data = {
+&"RESET": SubResource("Animation_p8ccj"),
+&"button_pressed": SubResource("Animation_d8nwk")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f40uw"]
+albedo_color = Color(1, 0.007843138, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_5yyqw"]
+material = SubResource("StandardMaterial3D_f40uw")
+
+[sub_resource type="Animation" id="Animation_tk8dj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuitMesh:mesh:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+
+[sub_resource type="Animation" id="Animation_4cwpn"]
+resource_name = "button_pressed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QuitMesh:mesh:radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5, 0.4, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f40uw"]
+_data = {
+&"RESET": SubResource("Animation_tk8dj"),
+&"button_pressed": SubResource("Animation_4cwpn")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tk8dj"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p8ccj"]
+material = SubResource("StandardMaterial3D_tk8dj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tk8dj"]
+
+[sub_resource type="Animation" id="Animation_f40uw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LvlSelMesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ctay"]
+resource_name = "button_pressed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LvlSelMesh:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.7, 0.7, 0.7), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ev3b6"]
+_data = {
+&"RESET": SubResource("Animation_f40uw"),
+&"button_pressed": SubResource("Animation_8ctay")
+}
+
+[node name="MainMenu" type="Node3D" unique_id=1028126452 groups=["main_menu"]]
+script = ExtResource("1_p8ccj")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1120613058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.989688)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1142406731]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=528322864]
+environment = SubResource("Environment_5yyqw")
+
+[node name="StartButton" type="StaticBody3D" parent="." unique_id=949035838]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6568295, 0, 0)
+
+[node name="StartMesh" type="MeshInstance3D" parent="StartButton" unique_id=1908788992]
+mesh = SubResource("SphereMesh_tk8dj")
+
+[node name="StartCol" type="CollisionShape3D" parent="StartButton" unique_id=1432258454]
+shape = SubResource("SphereShape3D_p8ccj")
+
+[node name="StartAnim" type="AnimationPlayer" parent="StartButton" unique_id=1851466293]
+libraries/ = SubResource("AnimationLibrary_4cwpn")
+
+[node name="QuitButton" type="StaticBody3D" parent="." unique_id=1092262375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5801433, 0, 0)
+
+[node name="QuitMesh" type="MeshInstance3D" parent="QuitButton" unique_id=499381217]
+mesh = SubResource("SphereMesh_5yyqw")
+
+[node name="QuitCol" type="CollisionShape3D" parent="QuitButton" unique_id=440998448]
+shape = SubResource("SphereShape3D_p8ccj")
+
+[node name="QuitAnim" type="AnimationPlayer" parent="QuitButton" unique_id=1688576922]
+libraries/ = SubResource("AnimationLibrary_f40uw")
+
+[node name="LvlSelButton" type="StaticBody3D" parent="." unique_id=1975030368]
+transform = Transform3D(0.6041302, 0.045137048, 0.3506984, 0, 0.6942731, -0.089357235, -0.35359114, 0.07711914, 0.5991876, -0.76710474, -0.7720255, 0)
+
+[node name="LvlSelMesh" type="MeshInstance3D" parent="LvlSelButton" unique_id=504968572]
+mesh = SubResource("BoxMesh_p8ccj")
+
+[node name="LvlSelCol" type="CollisionShape3D" parent="LvlSelButton" unique_id=1447385612]
+shape = SubResource("BoxShape3D_tk8dj")
+
+[node name="LvlSelAnim" type="AnimationPlayer" parent="LvlSelButton" unique_id=494845345]
+libraries/ = SubResource("AnimationLibrary_ev3b6")

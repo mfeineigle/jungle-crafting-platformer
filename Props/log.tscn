@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c61hcr821rwon"]
+
+[ext_resource type="PackedScene" uid="uid://dvguo1qja0id0" path="res://Assets/blender_stuff/log.blend" id="1_levcq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_levcq"]
+size = Vector3(0.21118164, 3.034607, 0.2598877)
+
+[node name="log" unique_id=992992876 instance=ExtResource("1_levcq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="log" parent_id_path=PackedInt32Array(971570888) index="0" unique_id=1730602883]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="log/StaticBody3D" index="0" unique_id=1909044691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041381836, -0.03793335, 0.04437256)
+shape = SubResource("BoxShape3D_levcq")

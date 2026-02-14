@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://sxnl3ixwbktd"]
+
+[ext_resource type="Script" uid="uid://ckwg7gg0mi07x" path="res://Scripts/UI/inventory_menu.gd" id="1_4btwc"]
+[ext_resource type="Theme" uid="uid://bicqcpu6gdxak" path="res://UI/border_theme.tres" id="2_l6l0t"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=1575655873 groups=["ui"]]
+script = ExtResource("1_4btwc")
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=1621120632]
+oversampling_override = 1.0
+
+[node name="popup_label" type="Label" parent="PopupPanel" unique_id=1458482873]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="Control" type="Control" parent="." unique_id=2105019238]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=9278941]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryCenterContainer" type="CenterContainer" parent="Control/HBoxContainer" unique_id=749974312]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/HBoxContainer/InventoryCenterContainer" unique_id=2012798602]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_l6l0t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/InventoryCenterContainer/PanelContainer" unique_id=1464382842]
+layout_mode = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/InventoryCenterContainer/PanelContainer/MarginContainer" unique_id=1378737831]
+layout_mode = 2
+
+[node name="inventory_header" type="HBoxContainer" parent="Control/HBoxContainer/InventoryCenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1941227070]
+layout_mode = 2
+
+[node name="inventory_label" type="Label" parent="Control/HBoxContainer/InventoryCenterContainer/PanelContainer/MarginContainer/VBoxContainer/inventory_header" unique_id=1447840089]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Inventory"
+horizontal_alignment = 1
+
+[node name="inventory_close_btn" type="Button" parent="Control/HBoxContainer/InventoryCenterContainer/PanelContainer/MarginContainer/VBoxContainer/inventory_header" unique_id=5479279]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+text = "X"
+
+[node name="inventory_list" type="GridContainer" parent="Control/HBoxContainer/InventoryCenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1598158874]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+columns = 5
+
+[node name="RecipeCenterContainer" type="CenterContainer" parent="Control/HBoxContainer" unique_id=1798750013]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/HBoxContainer/RecipeCenterContainer" unique_id=393477]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_l6l0t")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/RecipeCenterContainer/PanelContainer" unique_id=671841278]
+layout_mode = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/RecipeCenterContainer/PanelContainer/MarginContainer" unique_id=66030517]
+layout_mode = 2
+
+[node name="recipe_header" type="HBoxContainer" parent="Control/HBoxContainer/RecipeCenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=835511529]
+layout_mode = 2
+
+[node name="recipe_label" type="Label" parent="Control/HBoxContainer/RecipeCenterContainer/PanelContainer/MarginContainer/VBoxContainer/recipe_header" unique_id=1062982322]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Recipes"
+
+[node name="recipe_close_btn" type="Button" parent="Control/HBoxContainer/RecipeCenterContainer/PanelContainer/MarginContainer/VBoxContainer/recipe_header" unique_id=1520311047]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "X"
+
+[node name="recipe_list" type="VBoxContainer" parent="Control/HBoxContainer/RecipeCenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2119787335]
+layout_mode = 2

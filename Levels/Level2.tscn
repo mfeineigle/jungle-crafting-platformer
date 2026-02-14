@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dlxwl5tulurdh"]
+
+[ext_resource type="PackedScene" uid="uid://cc0bsslqrr3g2" path="res://Props/floor_dirt.tscn" id="1_8mrap"]
+[ext_resource type="Script" uid="uid://t28wjyjtbgrv" path="res://Scripts/Levels/level.gd" id="1_wcc2u"]
+[ext_resource type="PackedScene" uid="uid://dd7eb77vjh2m" path="res://Levels/level_change.tscn" id="3_nn734"]
+[ext_resource type="PackedScene" uid="uid://maqotbvni06i" path="res://Levels/Level3.tscn" id="4_506po"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_a0tk4"]
+sky_material = SubResource("ProceduralSkyMaterial_q04gf")
+
+[sub_resource type="Environment" id="Environment_s8dg4"]
+background_mode = 2
+sky = SubResource("Sky_a0tk4")
+tonemap_mode = 2
+
+[node name="Level2" type="Node3D" unique_id=1910314787 groups=["level"]]
+script = ExtResource("1_wcc2u")
+
+[node name="platform" parent="." unique_id=693319403 instance=ExtResource("1_8mrap")]
+
+[node name="platform2" parent="." unique_id=1114239670 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="platform3" parent="." unique_id=788242260 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+
+[node name="platform4" parent="." unique_id=568321916 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="platform5" parent="." unique_id=1497946426 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+
+[node name="platform6" parent="." unique_id=810686939 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="platform7" parent="." unique_id=1037006914 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="platform8" parent="." unique_id=1881361774 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
+
+[node name="platform9" parent="." unique_id=146417702 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="platform10" parent="." unique_id=895173633 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45)
+
+[node name="platform11" parent="." unique_id=64169737 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+
+[node name="platform12" parent="." unique_id=350900758 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55)
+
+[node name="platform13" parent="." unique_id=864850277 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60)
+
+[node name="platform14" parent="." unique_id=1141432900 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 65)
+
+[node name="platform15" parent="." unique_id=1828638878 instance=ExtResource("1_8mrap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 70)
+
+[node name="spawn_point" type="Marker3D" parent="." unique_id=688295645]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.2774668, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=489774943]
+environment = SubResource("Environment_s8dg4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=324475148]
+transform = Transform3D(0.2679837, 0.84728056, -0.45858535, 0.94413173, -0.13617982, 0.30011716, 0.1918332, -0.5133914, -0.83643866, -12, 6, 0)
+shadow_enabled = true
+
+[node name="level_change" parent="." unique_id=835760964 instance=ExtResource("3_nn734")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3791027, 5.406474)
+next_level = ExtResource("4_506po")

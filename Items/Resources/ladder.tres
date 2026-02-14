@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bq3e7fpryxxp7"]
+
+[ext_resource type="Texture2D" uid="uid://ci14pm3x3ooqi" path="res://Assets/pixel_art/ladder.png" id="1_06esp"]
+[ext_resource type="PackedScene" uid="uid://bl1hrb6u7bymj" path="res://Buildable/LadderPreview.tscn" id="1_65y7l"]
+[ext_resource type="Script" uid="uid://8g1k5ly4ship" path="res://Items/Resources/Item.gd" id="1_y05ot"]
+[ext_resource type="Resource" uid="uid://bk8jxl4qoxmyf" path="res://Items/Resources/stick.tres" id="4_a56oh"]
+
+[resource]
+script = ExtResource("1_y05ot")
+id = "ladder"
+display_name = "Ladder"
+icon = ExtResource("1_06esp")
+inputs = Array[ExtResource("1_y05ot")]([ExtResource("4_a56oh"), ExtResource("4_a56oh")])
+buildable = ExtResource("1_65y7l")
+metadata/_custom_type_script = "uid://8g1k5ly4ship"

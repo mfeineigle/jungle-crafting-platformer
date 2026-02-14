@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://ydgtkh21vngp"]
+
+[ext_resource type="Script" uid="uid://ckh6x0bf8k5s3" path="res://UI/test_3d_menu/background.gd" id="1_f40uw"]
+[ext_resource type="PackedScene" uid="uid://dkudeqbrcpnf4" path="res://Buildable/glider.tscn" id="1_p8ccj"]
+[ext_resource type="PackedScene" uid="uid://ploidsusuen2" path="res://Props/lava.tscn" id="2_tk8dj"]
+[ext_resource type="PackedScene" uid="uid://djsn6hw6sy83s" path="res://Props/water.tscn" id="3_4cwpn"]
+[ext_resource type="Script" uid="uid://bljdjqm5qefx2" path="res://UI/test_3d_menu/control.gd" id="4_f40uw"]
+
+[sub_resource type="Environment" id="Environment_p8ccj"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=605697398]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=237347363]
+transform = Transform3D(1, 0, 0, 0, 0.9985244, 0.054305386, 0, -0.05430539, 0.99852437, 0, 4.659788, 10.73104)
+light_energy = 14.729
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=87821290]
+environment = SubResource("Environment_p8ccj")
+
+[node name="background" type="Node3D" parent="." unique_id=1043923302]
+script = ExtResource("1_f40uw")
+
+[node name="glider" parent="background" unique_id=1653328224 instance=ExtResource("1_p8ccj")]
+
+[node name="lava" parent="background" unique_id=1843031200 instance=ExtResource("2_tk8dj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8318973, 0, 0)
+flow_speed = 0.2
+
+[node name="Water" parent="background" unique_id=2007165631 instance=ExtResource("3_4cwpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8318973, 0, 0)
+flow_speed = 0.1
+
+[node name="Water2" parent="background" unique_id=197393300 instance=ExtResource("3_4cwpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2920885, 0, 0)
+flow_speed = 0.1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1491532194]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2063806762]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=394354977]
+transform = Transform3D(1, 0, 0, 0, 0.541855, 0.840472, 0, -0.840472, 0.541855, 0, 2.3569489, 2.282643)
+
+[node name="Control" type="Control" parent="." unique_id=1228644667]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_f40uw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=2053177405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=1053672752]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "asdf"
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/Label" unique_id=760863755]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Control/VBoxContainer" unique_id=390911732]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "qqqq"

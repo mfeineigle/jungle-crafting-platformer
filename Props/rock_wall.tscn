@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b6434eo6lswrs"]
+
+[ext_resource type="PackedScene" uid="uid://1f1p5lcwdttp" path="res://Assets/blender_stuff/rock_wall.blend" id="1_onpxk"]
+
+[node name="rock_wall" unique_id=1237353510 instance=ExtResource("1_onpxk")]

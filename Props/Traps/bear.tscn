@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://darce5iygie2w"]
+
+[ext_resource type="Script" uid="uid://cu2oxj4r8j1wj" path="res://Scripts/Props/bear.gd" id="1_c0ymh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u0sd6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0ymh"]
+albedo_color = Color(0.41973183, 0.21856311, 4.813075e-08, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_o1q53"]
+material = SubResource("StandardMaterial3D_c0ymh")
+
+[node name="Bear" type="CharacterBody3D" unique_id=165214508]
+collision_mask = 5
+script = ExtResource("1_c0ymh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=290532205]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_u0sd6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1917545125]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_o1q53")
+skeleton = NodePath("../..")

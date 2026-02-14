@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bd6o4e7ej1fe3"]
+
+[ext_resource type="Script" uid="uid://c0dmhw4fbykhg" path="res://Scripts/Props/Traps/bear_trap_trigger.gd" id="1_rtxmt"]
+
+[node name="BearTrapTrigger" type="Area3D" unique_id=1193268537]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_rtxmt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=872906033]

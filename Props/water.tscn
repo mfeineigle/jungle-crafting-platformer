@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://djsn6hw6sy83s"]
+
+[ext_resource type="Script" uid="uid://bth7mitdp8jno" path="res://Scripts/Props/flowing_tile.gd" id="1_ks371"]
+[ext_resource type="Material" uid="uid://d0no37dmy57ei" path="res://Assets/materials/water.tres" id="2_ks371"]
+[ext_resource type="Script" uid="uid://fbbbypo0y7xx" path="res://Scripts/Props/flowing_tile_mesh.gd" id="3_4hg8y"]
+[ext_resource type="Script" uid="uid://d3572tgjv6hlf" path="res://Scripts/Props/flowing_tile_area.gd" id="3_bftg1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_03jye"]
+material = ExtResource("2_ks371")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03jye"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[node name="Water" type="Node3D" unique_id=2007165631]
+script = ExtResource("1_ks371")
+flow_dir = 4
+
+[node name="water_mesh" type="MeshInstance3D" parent="." unique_id=1951020859]
+instance_shader_parameters/flow_dir_index = 4
+instance_shader_parameters/flow_speed = 0.0
+mesh = SubResource("BoxMesh_03jye")
+script = ExtResource("3_4hg8y")
+
+[node name="Area3D" type="Area3D" parent="water_mesh" unique_id=573884138]
+transform = Transform3D(-0.6626592, 0, -0.74892104, 0, 1, 0, 0.74892104, 0, -0.6626592, 0, 0, 0)
+collision_mask = 5
+script = ExtResource("3_bftg1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="water_mesh/Area3D" unique_id=591472756]
+shape = SubResource("BoxShape3D_03jye")
+debug_color = Color(0.8866468, 0, 0.39319462, 0.41960785)

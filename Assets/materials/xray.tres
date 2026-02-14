@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cdooyqgrtsmfc"]
+
+[resource]
+transparency = 1
+stencil_mode = 2
+stencil_flags = 2
+stencil_color = Color(1, 0, 0, 1)

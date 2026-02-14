@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dest5ugxp5krp"]
+
+[ext_resource type="PackedScene" uid="uid://k2mfinmissso" path="res://Assets/blender_stuff/rock_ledge.blend" id="1_xhny8"]
+
+[node name="rock_ledge" unique_id=605545738 instance=ExtResource("1_xhny8")]

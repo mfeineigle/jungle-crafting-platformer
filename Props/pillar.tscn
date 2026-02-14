@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://tn3gobco8e5m"]
+
+[ext_resource type="PackedScene" uid="uid://mw2jgnlwngqn" path="res://Assets/blender_stuff/pillar.blend" id="1_byv6n"]
+
+[node name="pillar" unique_id=566902421 instance=ExtResource("1_byv6n")]

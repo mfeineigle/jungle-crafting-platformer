@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dguyqvw8keruo"]
+
+[ext_resource type="PackedScene" uid="uid://hcrjp27tfwo6" path="res://Assets/blender_stuff/vine.blend" id="1_bxsr5"]
+[ext_resource type="Script" uid="uid://gkdiltikr2dj" path="res://Scripts/Items/collectible.gd" id="2_rovuq"]
+[ext_resource type="Resource" uid="uid://bs6ygwanlunm1" path="res://Items/Resources/vine.tres" id="3_bnjuj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bnjuj"]
+
+[node name="vine" unique_id=1153632614 node_paths=PackedStringArray("detect_area") instance=ExtResource("1_bxsr5")]
+script = ExtResource("2_rovuq")
+detect_area = NodePath("vine/DetectArea")
+item = ExtResource("3_bnjuj")
+
+[node name="DetectArea" type="Area3D" parent="vine" index="0" unique_id=2112042797]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vine/DetectArea" index="0" unique_id=2015776863]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 4, 0)
+shape = SubResource("CylinderShape3D_bnjuj")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c755b8trrnxwn"]
+
+[ext_resource type="PackedScene" uid="uid://beb6fsa3v7qwh" path="res://Assets/blender_stuff/stick.blend" id="1_agfe5"]
+[ext_resource type="Script" uid="uid://gkdiltikr2dj" path="res://Scripts/Items/collectible.gd" id="2_1hssm"]
+[ext_resource type="Resource" uid="uid://bk8jxl4qoxmyf" path="res://Items/Resources/stick.tres" id="3_0algd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_agfe5"]
+radius = 0.32080078
+height = 2.0109863
+
+[node name="stick" node_paths=PackedStringArray("detect_area") instance=ExtResource("1_agfe5")]
+script = ExtResource("2_1hssm")
+detect_area = NodePath("stick/DetectArea")
+item = ExtResource("3_0algd")
+
+[node name="DetectArea" type="Area3D" parent="stick" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0.1)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick/DetectArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, -0.011344353, 0.9999356, 0, -0.9999356, -0.011344353, -0.07241124, 6.2316365e-05, 0.00549281)
+shape = SubResource("CapsuleShape3D_agfe5")

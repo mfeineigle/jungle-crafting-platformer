@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://d4my5cd83ycx0"]
+
+[ext_resource type="Script" uid="uid://p6k1nghd2jwq" path="res://UI/test_3d_menu/menu_3d.gd" id="1_fo7e4"]
+[ext_resource type="Script" uid="uid://bx7dy2scl8r3e" path="res://UI/test_3d_menu/cylinder.gd" id="2_ev21m"]
+[ext_resource type="PackedScene" uid="uid://dkudeqbrcpnf4" path="res://Buildable/glider.tscn" id="3_fo7e4"]
+
+[sub_resource type="Environment" id="Environment_ev21m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fo7e4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jmnf0"]
+size = Vector3(1.9520874, 1, 2.0412598)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fo7e4"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uuvw1"]
+material = SubResource("StandardMaterial3D_fo7e4")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ev21m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ev21m"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ev21m"]
+material = SubResource("StandardMaterial3D_ev21m")
+
+[sub_resource type="Animation" id="Animation_ev21m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.99999994, 0.99999994, 1)]
+}
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cylinder2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.99999994, 0.99999994, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("glider:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fo7e4"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.99999994, 0.99999994, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.99999994, 0.99999994, 1)]
+}
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cylinder2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.99999994, 0.99999994, 1, 0.53333336, 1, 0.5, 0.5, 0.5, 0.96666664, 1, 0.99999994, 0.99999994, 1)
+
+[sub_resource type="Animation" id="Animation_nuroy"]
+resource_name = "spin"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("glider:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-6.2831855, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmnf0"]
+_data = {
+&"RESET": SubResource("Animation_ev21m"),
+&"new_animation": SubResource("Animation_fo7e4"),
+&"spin": SubResource("Animation_nuroy")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_10y07"]
+size = Vector3(2.9718018, 0.2949829, 3.2661743)
+
+[node name="Node3D" type="Node3D" unique_id=29659982]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1724567800]
+transform = Transform3D(1, 0, 0, 0, 0.24075323, 0.97058636, 0, -0.97058636, 0.24075323, 0, 1.8145177, 0.65085554)
+script = ExtResource("1_fo7e4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1708475709]
+transform = Transform3D(1, 0, 0, 0, 0.9985244, 0.054305386, 0, -0.05430539, 0.99852437, 0, 4.659788, 10.73104)
+light_energy = 14.729
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=749058386]
+environment = SubResource("Environment_ev21m")
+
+[node name="Plane" type="StaticBody3D" parent="." unique_id=1801156042]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane" unique_id=1243003920]
+mesh = SubResource("PlaneMesh_fo7e4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane" unique_id=1886821518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026061058, -0.21043622, -0.024780273)
+shape = SubResource("BoxShape3D_jmnf0")
+
+[node name="Cylinder" type="StaticBody3D" parent="." unique_id=255386879]
+transform = Transform3D(0.79782593, -0.6028877, 0, 0.6028877, 0.79782593, 0, 0, 0, 1, 2.1524525, 0, 0)
+script = ExtResource("2_ev21m")
+button_name = "cilly"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder" unique_id=49784593]
+mesh = SubResource("CylinderMesh_uuvw1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder" unique_id=1124189966]
+shape = SubResource("CylinderShape3D_ev21m")
+
+[node name="Cylinder2" type="StaticBody3D" parent="." unique_id=991047243]
+transform = Transform3D(0.79782593, -0.6028877, 0, 0.6028877, 0.79782593, 0, 0, 0, 1, 2.1524525, 0, 0)
+visible = false
+script = ExtResource("2_ev21m")
+button_name = "cilly"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinder2" unique_id=1759948765]
+mesh = SubResource("CylinderMesh_ev21m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder2" unique_id=604543285]
+shape = SubResource("CylinderShape3D_ev21m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1141071348]
+libraries/ = SubResource("AnimationLibrary_jmnf0")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1733751259]
+libraries/ = SubResource("AnimationLibrary_jmnf0")
+
+[node name="glider" parent="." unique_id=1653328224 instance=ExtResource("3_fo7e4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6198854, 0, 0)
+
+[node name="glider" type="StaticBody3D" parent="glider" unique_id=710228970]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="glider/glider" unique_id=2050398898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028381348, -0.022613525, 0.11898804)
+shape = SubResource("BoxShape3D_10y07")

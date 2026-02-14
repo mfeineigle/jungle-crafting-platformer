@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://dnyit1mc40640"]
+
+[ext_resource type="Script" uid="uid://8g1k5ly4ship" path="res://Items/Resources/Item.gd" id="1_bx4j6"]
+[ext_resource type="Texture2D" uid="uid://cc33ayi2tedn4" path="res://Assets/pixel_art/leaf.png" id="1_c6yfk"]
+
+[resource]
+script = ExtResource("1_bx4j6")
+id = "leaf"
+display_name = "Leaf"
+icon = ExtResource("1_c6yfk")
+recipe_learn = "res://Items/Resources/glider.tres"
+recipe_msg = "Paired with some sticks, I bet I could make a glider."
+metadata/_custom_type_script = "uid://8g1k5ly4ship"

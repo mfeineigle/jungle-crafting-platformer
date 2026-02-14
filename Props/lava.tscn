@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ploidsusuen2"]
+
+[ext_resource type="Script" uid="uid://bth7mitdp8jno" path="res://Scripts/Props/flowing_tile.gd" id="1_3o23f"]
+[ext_resource type="Material" uid="uid://dt26xeoiyc8t2" path="res://Assets/materials/lava.tres" id="2_h2w28"]
+[ext_resource type="Script" uid="uid://fbbbypo0y7xx" path="res://Scripts/Props/flowing_tile_mesh.gd" id="3_qr00d"]
+[ext_resource type="Script" uid="uid://d3572tgjv6hlf" path="res://Scripts/Props/flowing_tile_area.gd" id="4_kc22q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qr00d"]
+material = ExtResource("2_h2w28")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3o23f"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[node name="lava" type="Node3D" unique_id=1843031200]
+script = ExtResource("1_3o23f")
+
+[node name="lava_mesh" type="MeshInstance3D" parent="." unique_id=1805830522]
+instance_shader_parameters/flow_dir_index = 0
+instance_shader_parameters/flow_speed = 0.0
+mesh = SubResource("BoxMesh_qr00d")
+script = ExtResource("3_qr00d")
+
+[node name="Area3D" type="Area3D" parent="lava_mesh" unique_id=1340392365]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("4_kc22q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lava_mesh/Area3D" unique_id=876817812]
+shape = SubResource("BoxShape3D_3o23f")

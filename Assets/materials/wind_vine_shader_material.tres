@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ctwjsuabouwwl"]
+
+[ext_resource type="Shader" uid="uid://bexvvsu02lrwg" path="res://Assets/materials/wind_vine_shader_material.gdshader" id="1_637pp"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_637pp")
+shader_parameter/wind_strength = 0.0
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/phase_offset = 0.0

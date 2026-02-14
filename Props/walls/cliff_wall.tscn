@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://pwp3qtp2ovvx"]
+
+[ext_resource type="PackedScene" uid="uid://b33j3loi4ofra" path="res://Assets/blender_stuff/cliff_wall.blend" id="1_pqi0j"]
+
+[node name="cliff_wall" unique_id=505050228 instance=ExtResource("1_pqi0j")]

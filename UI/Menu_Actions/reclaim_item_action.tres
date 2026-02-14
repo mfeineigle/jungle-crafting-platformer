@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ReclaimItemAction" load_steps=3 format=3 uid="uid://be5ssbcivjiwf"]
+
+[ext_resource type="Script" uid="uid://b0d4mvafajah4" path="res://UI/Menu_Actions/reclaim_item_action.gd" id="1_fsg2w"]
+[ext_resource type="Texture2D" uid="uid://dvdyce4bd4ia8" path="res://Assets/pixel_art/reclaim.png" id="1_yvn2l"]
+
+[resource]
+script = ExtResource("1_fsg2w")
+icon = ExtResource("1_yvn2l")

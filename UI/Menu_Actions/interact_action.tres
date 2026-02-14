@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="UseItemAction" load_steps=3 format=3 uid="uid://g1xcww4hjede"]
+
+[ext_resource type="Script" uid="uid://hyxr7ednokqp" path="res://UI/Menu_Actions/interact_action.gd" id="1_3mtey"]
+[ext_resource type="Texture2D" uid="uid://cvugej0dj41mx" path="res://Assets/icon.svg" id="1_q6xqn"]
+
+[resource]
+script = ExtResource("1_3mtey")
+icon = ExtResource("1_q6xqn")

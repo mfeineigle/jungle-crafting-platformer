@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dkudeqbrcpnf4"]
+
+[ext_resource type="PackedScene" uid="uid://bjbs566cu4orw" path="res://Assets/blender_stuff/glider.blend" id="1_wi7cr"]
+[ext_resource type="Script" uid="uid://dyxo2tcmae1x7" path="res://Scripts/Player/glider.gd" id="2_eefb3"]
+[ext_resource type="Script" uid="uid://oew32cgc3mbm" path="res://UI/Menu_Actions/item_action.gd" id="8_vpjqo"]
+[ext_resource type="Resource" uid="uid://dwdnjk5cgwhda" path="res://UI/Menu_Actions/pick_up_action.tres" id="9_sc3fq"]
+[ext_resource type="Resource" uid="uid://be5ssbcivjiwf" path="res://UI/Menu_Actions/reclaim_item_action.tres" id="10_17gyt"]
+[ext_resource type="Resource" uid="uid://g1xcww4hjede" path="res://UI/Menu_Actions/interact_action.tres" id="11_jfyrb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eefb3"]
+radius = 1.4023438
+height = 3.869873
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_446fj"]
+size = Vector3(1.9873047, 0.24609375, 1.9470215)
+
+[node name="glider" unique_id=1653328224 instance=ExtResource("1_wi7cr")]
+script = ExtResource("2_eefb3")
+item_path = "res://Items/Resources/glider.tres"
+actions = Array[ExtResource("8_vpjqo")]([ExtResource("9_sc3fq"), ExtResource("10_17gyt"), ExtResource("11_jfyrb")])
+display_name = "Glider"
+
+[node name="detect_area" type="Area3D" parent="." index="3" unique_id=552531277]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detect_area" index="0" unique_id=1866395884]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -1.542066e-09, 0.055754066)
+shape = SubResource("CapsuleShape3D_eefb3")
+
+[node name="placement_body" type="StaticBody3D" parent="." index="4" unique_id=1514612455]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 0, 0, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="placement_col" type="CollisionShape3D" parent="placement_body" index="0" unique_id=2094658345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039550792, 0.0390625, 0.057983425)
+shape = SubResource("BoxShape3D_446fj")
+debug_color = Color(0.94509804, 0, 0.5921569, 1)

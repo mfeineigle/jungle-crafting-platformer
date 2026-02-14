@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bcxsrnabcud4l"]
+
+[ext_resource type="PackedScene" uid="uid://d14sjna63goda" path="res://Assets/blender_stuff/ladder_segment.blend" id="1_0fbiy"]
+[ext_resource type="Script" uid="uid://dma7iecge2upf" path="res://Scripts/Items/ladder_segment.gd" id="2_1w3c0"]
+[ext_resource type="Script" uid="uid://oew32cgc3mbm" path="res://UI/Menu_Actions/item_action.gd" id="8_08j6b"]
+[ext_resource type="Resource" uid="uid://dwdnjk5cgwhda" path="res://UI/Menu_Actions/pick_up_action.tres" id="9_1ysyn"]
+[ext_resource type="Resource" uid="uid://be5ssbcivjiwf" path="res://UI/Menu_Actions/reclaim_item_action.tres" id="10_jdboi"]
+[ext_resource type="Resource" uid="uid://g1xcww4hjede" path="res://UI/Menu_Actions/interact_action.tres" id="11_macx7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjmp6"]
+size = Vector3(0.5326233, 0.85235405, 0.7451172)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mh01"]
+size = Vector3(0.491333, 0.83039474, 0.7861328)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5gkpg"]
+size = Vector3(0.7733154, 0.7307625, 0.7749176)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdimi"]
+size = Vector3(0.72766113, 0.8141823, 0.7811279)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pds1"]
+size = Vector3(0.21276855, 0.93914795, 0.7536316)
+
+[node name="ladder_segment" unique_id=1101357330 instance=ExtResource("1_0fbiy")]
+script = ExtResource("2_1w3c0")
+item_path = "res://Items/Resources/ladder.tres"
+actions = Array[ExtResource("8_08j6b")]([ExtResource("9_1ysyn"), ExtResource("10_jdboi"), ExtResource("11_macx7")])
+
+[node name="StaticBody3D" parent="left_leg" index="0"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="StaticBody3D" parent="right_leg" index="0"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="StaticBody3D" parent="rung_1" index="0"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="StaticBody3D" parent="rung_2" index="0"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="StaticBody3D" parent="rung_2_001" index="0"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="areas" type="Node3D" parent="." index="5" unique_id=2073177780]
+
+[node name="top_front_area" type="Area3D" parent="areas" index="0" unique_id=716467735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0258332, 0.8283969, -0.27079543)
+collision_layer = 2
+collision_mask = 5
+
+[node name="top_front_col" type="CollisionShape3D" parent="areas/top_front_area" index="0" unique_id=489469654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09861469, 1.0380396, 0.031152606)
+shape = SubResource("BoxShape3D_pjmp6")
+
+[node name="enter_marker" type="Marker3D" parent="areas/top_front_area" index="1" unique_id=942113731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116227865, 0, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/top_front_area" index="2" unique_id=2058804494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91732186, 1.1866504, 0)
+
+[node name="top_back_area" type="Area3D" parent="areas" index="1" unique_id=807841491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9691765, 0.8963914, -0.27854094)
+collision_layer = 2
+collision_mask = 5
+
+[node name="top_back_col" type="CollisionShape3D" parent="areas/top_back_area" index="0" unique_id=653063638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13372809, 0.98353004, 0.045410156)
+shape = SubResource("BoxShape3D_3mh01")
+debug_color = Color(0.88030833, 0.30965853, 0.36659983, 0.41960785)
+
+[node name="enter_marker" type="Marker3D" parent="areas/top_back_area" index="1" unique_id=869239584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03589636, 0, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/top_back_area" index="2" unique_id=523842700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90446854, 1.120148, 0)
+
+[node name="bottom_front_area" type="Area3D" parent="areas" index="2" unique_id=1745174575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4995715, 0.15051553, -0.29102793)
+collision_layer = 2
+collision_mask = 5
+
+[node name="bottom_front_col" type="CollisionShape3D" parent="areas/bottom_front_area" index="0" unique_id=1138932061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.42575648, 0)
+shape = SubResource("BoxShape3D_5gkpg")
+debug_color = Color(0.9680436, 0, 0.47345233, 0.41960785)
+
+[node name="enter_marker" type="Marker3D" parent="areas/bottom_front_area" index="1" unique_id=1533599676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, 0.85, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/bottom_front_area" index="2" unique_id=538214869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.234, 0.85, 0)
+
+[node name="bottom_back_area" type="Area3D" parent="areas" index="3" unique_id=945675523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48217523, 0.14713314, -0.27708644)
+collision_layer = 2
+collision_mask = 5
+
+[node name="bottom_back_col" type="CollisionShape3D" parent="areas/bottom_back_area" index="0" unique_id=2014654678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.018981934, 0.44349477, 0)
+shape = SubResource("BoxShape3D_cdimi")
+
+[node name="enter_marker" type="Marker3D" parent="areas/bottom_back_area" index="1" unique_id=536072274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.85, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/bottom_back_area" index="2" unique_id=745841216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.85, 0)
+
+[node name="placement_body" type="StaticBody3D" parent="." index="6" unique_id=1508952349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44712412, -0.25890458)
+collision_layer = 0
+collision_mask = 0
+
+[node name="placement_col" type="CollisionShape3D" parent="placement_body" index="0" unique_id=2083027165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0033569336, 0.058624268, -0.001663208)
+shape = SubResource("BoxShape3D_7pds1")
+debug_color = Color(0, 0.6431373, 0.3254902, 0.59607846)

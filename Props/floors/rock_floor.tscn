@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://10ey0gq2dcg3"]
+
+[ext_resource type="PackedScene" uid="uid://eb702hoc1msr" path="res://Assets/blender_stuff/rock_floor.blend" id="1_20exe"]
+
+[node name="rock_floor" unique_id=609822878 instance=ExtResource("1_20exe")]

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c264vjpploq71"]
+
+[ext_resource type="Script" uid="uid://vvnrul33ogds" path="res://Scripts/UI/level_select.gd" id="1_r4dbv"]
+
+[node name="LevelSelect" type="CanvasLayer" unique_id=547474422]
+script = ExtResource("1_r4dbv")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=927624971]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1907087153]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Button0" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1292268413]
+layout_mode = 2
+text = "0"
+
+[node name="Button1" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1086559571]
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1666474657]
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer" unique_id=192368129]
+layout_mode = 2
+text = "3"
+
+[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer" unique_id=48665627]
+layout_mode = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1322991860]
+layout_mode = 2
+text = "5"

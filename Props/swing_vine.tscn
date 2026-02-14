@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://mm4t0705eltt"]
+
+[ext_resource type="PackedScene" uid="uid://hcrjp27tfwo6" path="res://Assets/blender_stuff/vine.blend" id="1_3eyjy"]
+[ext_resource type="Script" uid="uid://c3bsyxcxtr1pl" path="res://Scripts/Props/swing_vine.gd" id="2_tef25"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tef25"]
+radius = 1.9598389
+height = 3.9196777
+
+[node name="swing_vine" unique_id=156554714 instance=ExtResource("1_3eyjy")]
+script = ExtResource("2_tef25")
+
+[node name="detect_area" type="Area3D" parent="." index="1" unique_id=2084889322]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detect_area" index="0" unique_id=1336178634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1766357, 0)
+shape = SubResource("CapsuleShape3D_tef25")
+
+[node name="end_marker" type="Marker3D" parent="." index="2" unique_id=882462208]

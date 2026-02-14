@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b7tqrgjvg2fwo"]
+
+[ext_resource type="PackedScene" uid="uid://cc0bsslqrr3g2" path="res://Props/floor_dirt.tscn" id="1_3s55m"]
+[ext_resource type="PackedScene" uid="uid://b48hjxxqrm7of" path="res://Props/grass_clump.tscn" id="2_mc5y0"]
+[ext_resource type="PackedScene" uid="uid://djsn6hw6sy83s" path="res://Props/water.tscn" id="3_x4r7f"]
+[ext_resource type="PackedScene" uid="uid://ploidsusuen2" path="res://Props/lava.tscn" id="4_8w0kx"]
+[ext_resource type="PackedScene" uid="uid://tf17eovjt7hq" path="res://Props/updraft.tscn" id="5_seejp"]
+[ext_resource type="PackedScene" uid="uid://peostwdt47g0" path="res://Props/fern_1.tscn" id="6_oyisl"]
+[ext_resource type="PackedScene" uid="uid://bsygo65u1j61h" path="res://Props/rock_1.tscn" id="7_d62nj"]
+[ext_resource type="PackedScene" uid="uid://cm0rd2xjachya" path="res://Props/cloud_1.tscn" id="8_x37y4"]
+[ext_resource type="PackedScene" uid="uid://b6434eo6lswrs" path="res://Props/rock_wall.tscn" id="9_ftri4"]
+[ext_resource type="PackedScene" uid="uid://dest5ugxp5krp" path="res://Props/rock_ledge.tscn" id="10_kq35o"]
+
+[node name="map_lib" type="Node3D" unique_id=1778733230]
+
+[node name="platform" parent="." unique_id=693319403 instance=ExtResource("1_3s55m")]
+
+[node name="grass_clump" parent="." unique_id=1534703671 instance=ExtResource("2_mc5y0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9957848, 0, 7.203068)
+
+[node name="Water" parent="." unique_id=2007165631 instance=ExtResource("3_x4r7f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.958067, 0, 0)
+
+[node name="lava" parent="." unique_id=1843031200 instance=ExtResource("4_8w0kx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.062953, 0, 7.313512)
+
+[node name="Updraft" parent="." unique_id=194473708 instance=ExtResource("5_seejp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.787615)
+
+[node name="fern_1" parent="." unique_id=1548967947 instance=ExtResource("6_oyisl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.4230723)
+
+[node name="rock_1" parent="." unique_id=1458080878 instance=ExtResource("7_d62nj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.939427, 0, 0)
+
+[node name="cloud_1" parent="." unique_id=1761119841 instance=ExtResource("8_x37y4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.8369656)
+
+[node name="rock_wall" parent="." unique_id=1237353510 instance=ExtResource("9_ftri4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.760719, 0, -5.2421007)
+
+[node name="rock_ledge" parent="." unique_id=605545738 instance=ExtResource("10_kq35o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9595413, 0, -6.7959523)

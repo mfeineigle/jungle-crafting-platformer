@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cwlio2vhtvhq4"]
+
+[ext_resource type="PackedScene" uid="uid://dnhs258s3dlvl" path="res://Assets/blender_stuff/stalactitte.blend" id="1_agss3"]
+
+[node name="stalactitte" unique_id=351091408 instance=ExtResource("1_agss3")]

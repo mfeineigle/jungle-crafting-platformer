@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://co2e7p0bq25j8"]
+
+[ext_resource type="PackedScene" uid="uid://c02xrjdhf30yk" path="res://Assets/blender_stuff/rope_segment.blend" id="1_o3av7"]
+[ext_resource type="Script" uid="uid://c33r2dhtnpigu" path="res://Scripts/Items/rope_segment.gd" id="2_a2jfu"]
+[ext_resource type="Shape3D" uid="uid://ba7gvoqo5vchh" path="res://Items/Resources/rope_area_col.tres" id="3_8vl01"]
+[ext_resource type="Script" uid="uid://oew32cgc3mbm" path="res://UI/Menu_Actions/item_action.gd" id="3_rmt00"]
+[ext_resource type="Resource" uid="uid://dwdnjk5cgwhda" path="res://UI/Menu_Actions/pick_up_action.tres" id="4_njoag"]
+[ext_resource type="Resource" uid="uid://be5ssbcivjiwf" path="res://UI/Menu_Actions/reclaim_item_action.tres" id="5_6d0ts"]
+[ext_resource type="Resource" uid="uid://g1xcww4hjede" path="res://UI/Menu_Actions/interact_action.tres" id="6_clr3t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rmt00"]
+height = 0.9100342
+radius = 0.20898438
+
+[node name="rope_segment" unique_id=198766866 instance=ExtResource("1_o3av7")]
+script = ExtResource("2_a2jfu")
+actions = Array[ExtResource("3_rmt00")]([ExtResource("4_njoag"), ExtResource("5_6d0ts"), ExtResource("6_clr3t")])
+item_path = "res://Items/Resources/rope.tres"
+
+[node name="StaticBody3D" parent="rope" index="0"]
+collision_layer = 2
+collision_mask = 5
+
+[node name="areas" type="Node3D" parent="." index="1" unique_id=1198278108]
+
+[node name="top_one_area" type="Area3D" parent="areas" index="0" unique_id=2078868152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.90690154)
+collision_layer = 2
+collision_mask = 5
+
+[node name="top_one_col" type="CollisionShape3D" parent="areas/top_one_area" index="0" unique_id=349585344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082092285, -0.11628151)
+shape = ExtResource("3_8vl01")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="enter_marker" type="Marker3D" parent="areas/top_one_area" index="1" unique_id=1566686939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0021890998)
+
+[node name="exit_marker" type="Marker3D" parent="areas/top_one_area" index="2" unique_id=709376336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.91068953)
+
+[node name="top_two_area" type="Area3D" parent="areas" index="1" unique_id=71806290]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -0.9275111, 1.0902452, -0.53197145)
+collision_layer = 2
+collision_mask = 5
+
+[node name="top_two_col" type="CollisionShape3D" parent="areas/top_two_area" index="0" unique_id=2039127085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.940697e-08, 0, 0.2565527)
+shape = ExtResource("3_8vl01")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="enter_marker" type="Marker3D" parent="areas/top_two_area" index="1" unique_id=553318482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005007982, 0, -0.0038979053)
+
+[node name="exit_marker" type="Marker3D" parent="areas/top_two_area" index="2" unique_id=2127396723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007756004, 1, 1.0642926)
+
+[node name="top_three_area" type="Area3D" parent="areas" index="2" unique_id=1540209519]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 0.91493046, 1.0786517, -0.5460578)
+collision_layer = 2
+collision_mask = 5
+
+[node name="top_three_col" type="CollisionShape3D" parent="areas/top_three_area" index="0" unique_id=1709268358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2799793)
+shape = ExtResource("3_8vl01")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="enter_marker" type="Marker3D" parent="areas/top_three_area" index="1" unique_id=1055964831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003267914, 0, 0.008913517)
+
+[node name="exit_marker" type="Marker3D" parent="areas/top_three_area" index="2" unique_id=1037533829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013255253, 1, 1.0638372)
+
+[node name="bottom_one_area" type="Area3D" parent="areas" index="3" unique_id=496859534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.91427565)
+collision_layer = 2
+collision_mask = 5
+
+[node name="bottom_one_col" type="CollisionShape3D" parent="areas/bottom_one_area" index="0" unique_id=31111255]
+shape = ExtResource("3_8vl01")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="enter_marker" type="Marker3D" parent="areas/bottom_one_area" index="1" unique_id=1382785989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/bottom_one_area" index="2" unique_id=328622819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="bottom_two_area" type="Area3D" parent="areas" index="4" unique_id=1876241096]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, -0.91808176, 0, -0.5481944)
+collision_layer = 2
+collision_mask = 5
+
+[node name="bottom_two_col" type="CollisionShape3D" parent="areas/bottom_two_area" index="0" unique_id=1255750311]
+shape = ExtResource("3_8vl01")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="enter_marker" type="Marker3D" parent="areas/bottom_two_area" index="1" unique_id=2130523289]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/bottom_two_area" index="2" unique_id=1716883359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="bottom_three_area" type="Area3D" parent="areas" index="5" unique_id=120740647]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 0.9048085, 0, -0.5437703)
+collision_layer = 2
+collision_mask = 5
+
+[node name="bottom_three_col" type="CollisionShape3D" parent="areas/bottom_three_area" index="0" unique_id=492380397]
+shape = ExtResource("3_8vl01")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="enter_marker" type="Marker3D" parent="areas/bottom_three_area" index="1" unique_id=304558306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="exit_marker" type="Marker3D" parent="areas/bottom_three_area" index="2" unique_id=1617177092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="placement_body" type="StaticBody3D" parent="." index="2" unique_id=589433999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48509705, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="placement_col" type="CollisionShape3D" parent="placement_body" index="0" unique_id=304831496]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012023926, 0)
+shape = SubResource("CylinderShape3D_rmt00")

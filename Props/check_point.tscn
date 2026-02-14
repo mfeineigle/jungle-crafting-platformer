@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bj8oo0gun68no"]
+
+[ext_resource type="Script" uid="uid://dhxjy6jgfqln5" path="res://Scripts/Levels/check_point.gd" id="1_ru66p"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_24pov"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2ghuh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_siq2e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ru66p"]
+transparency = 1
+albedo_color = Color(1, 1, 0, 0.32156864)
+metallic = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_24pov"]
+material = SubResource("StandardMaterial3D_ru66p")
+
+[sub_resource type="Animation" id="Animation_ru66p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.363659, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_24pov"]
+resource_name = "active"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.363659, 0), Vector3(0, 1.76, 0.1), Vector3(0, 1.839, 0), Vector3(0, 1.681, -0.1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 1.1, 1.1), Vector3(1.2, 1.2, 1.2), Vector3(1.1, 1.1, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ghuh"]
+_data = {
+&"RESET": SubResource("Animation_ru66p"),
+&"active": SubResource("Animation_24pov")
+}
+
+[node name="CheckPoint" type="Node3D" unique_id=1035767443]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_ru66p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=751949232]
+transform = Transform3D(1, 0, 0, 0, 0.01, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_24pov")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1184708621]
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1943713178]
+shape = SubResource("CylinderShape3D_2ghuh")
+debug_color = Color(0.9411765, 0, 0.60784316, 1)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1318324372]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1220249924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83512425, 0)
+shape = SubResource("CylinderShape3D_siq2e")
+
+[node name="active_orb" type="MeshInstance3D" parent="." unique_id=674671516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.363659, 0)
+mesh = SubResource("SphereMesh_24pov")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="active_orb" unique_id=1606138898]
+libraries/ = SubResource("AnimationLibrary_2ghuh")

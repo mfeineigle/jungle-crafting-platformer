@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bs6ygwanlunm1"]
+
+[ext_resource type="Script" uid="uid://8g1k5ly4ship" path="res://Items/Resources/Item.gd" id="1_gq4j4"]
+[ext_resource type="Texture2D" uid="uid://c4386ft8tvy74" path="res://Assets/pixel_art/vine.png" id="1_mpxsi"]
+
+[resource]
+script = ExtResource("1_gq4j4")
+id = "vine"
+display_name = "Vine"
+icon = ExtResource("1_mpxsi")
+recipe_learn = "res://Items/Resources/rope.tres"
+recipe_msg = "This might be useful for making a rope."
+metadata/_custom_type_script = "uid://8g1k5ly4ship"

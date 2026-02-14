@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cedorkqunauyp"]
+
+[ext_resource type="Script" uid="uid://clyvsunsbtts" path="res://Scripts/Items/rope.gd" id="1_hijes"]
+[ext_resource type="PackedScene" uid="uid://co2e7p0bq25j8" path="res://Buildable/rope_segment.tscn" id="2_sdnah"]
+
+[node name="Rope" type="Node3D" unique_id=1042462151]
+script = ExtResource("1_hijes")
+rope_segment_scene = ExtResource("2_sdnah")
+display_name = "Rope"
+snap_mode = 3

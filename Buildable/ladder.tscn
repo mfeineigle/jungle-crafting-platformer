@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://do37clkxir6k2"]
+
+[ext_resource type="Script" uid="uid://bl8n5h4ulml4p" path="res://Scripts/Items/ladder.gd" id="1_cq4ai"]
+[ext_resource type="PackedScene" uid="uid://bcxsrnabcud4l" path="res://Buildable/ladder_segment.tscn" id="2_lqhsa"]
+
+[node name="Ladder" type="Node3D" unique_id=554611459]
+script = ExtResource("1_cq4ai")
+ladder_segment_scene = ExtResource("2_lqhsa")
+display_name = "Ladder"
+snap_mode = 1

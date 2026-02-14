@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cmpfuce0igrb8"]
+
+[ext_resource type="Script" uid="uid://c72370u07xytk" path="res://Scripts/UI/msg.gd" id="2_1645w"]
+
+[node name="Msg" type="PanelContainer" unique_id=1506807857]
+script = ExtResource("2_1645w")
+
+[node name="Label" type="Label" parent="." unique_id=838349902]
+layout_mode = 2

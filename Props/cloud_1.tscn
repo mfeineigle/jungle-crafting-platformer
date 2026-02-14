@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm0rd2xjachya"]
+
+[ext_resource type="PackedScene" uid="uid://do7tddfr8yv2q" path="res://Assets/blender_stuff/cloud_1.blend" id="1_r6bjd"]
+[ext_resource type="Material" uid="uid://db25p8ampjauo" path="res://Assets/materials/cloud_1.tres" id="2_vrb53"]
+
+[node name="cloud_1" instance=ExtResource("1_r6bjd")]
+
+[node name="Icosphere" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_vrb53")

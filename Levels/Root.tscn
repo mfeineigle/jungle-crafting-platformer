@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://flq72rshxovn"]
+
+[ext_resource type="Script" uid="uid://bjpascrgy0cne" path="res://Scripts/Levels/root.gd" id="1_w4uj2"]
+[ext_resource type="PackedScene" uid="uid://dg56ljdr46yx0" path="res://UI/build_ui.tscn" id="2_5xxs1"]
+[ext_resource type="PackedScene" uid="uid://sxnl3ixwbktd" path="res://UI/inventory_ui.tscn" id="3_xhd6w"]
+[ext_resource type="PackedScene" uid="uid://dprcvwgkqyi11" path="res://UI/interact_ui.tscn" id="4_a44gf"]
+[ext_resource type="PackedScene" uid="uid://cnpe6fci8grk8" path="res://UI/msg_ui.tscn" id="5_npgpe"]
+[ext_resource type="PackedScene" uid="uid://c264vjpploq71" path="res://UI/level_select.tscn" id="6_4m2f3"]
+[ext_resource type="PackedScene" uid="uid://cc7ntxl11e3lr" path="res://UI/main_menu.tscn" id="7_22xx2"]
+[ext_resource type="PackedScene" uid="uid://uobuip56omu0" path="res://Player.tscn" id="8_3ccuq"]
+
+[node name="Root" type="Node3D" unique_id=1002192621]
+script = ExtResource("1_w4uj2")
+
+[node name="UI" type="Control" parent="." unique_id=102347944]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuildUI" parent="UI" unique_id=309223750 instance=ExtResource("2_5xxs1")]
+
+[node name="InventoryUI" parent="UI" unique_id=1575655873 instance=ExtResource("3_xhd6w")]
+
+[node name="InteractUI" parent="UI" unique_id=746382413 instance=ExtResource("4_a44gf")]
+
+[node name="MsgUI" parent="UI" unique_id=1189939658 instance=ExtResource("5_npgpe")]
+layout_mode = 1
+offset_left = 940.0
+offset_top = 520.0
+offset_right = 940.0
+offset_bottom = 520.0
+
+[node name="LevelSelect" parent="UI" unique_id=547474422 instance=ExtResource("6_4m2f3")]
+
+[node name="World" type="Node3D" parent="." unique_id=1957704302]
+unique_name_in_owner = true
+
+[node name="MainMenu" parent="World" unique_id=1028126452 instance=ExtResource("7_22xx2")]
+
+[node name="Player" parent="World" unique_id=1893396378 instance=ExtResource("8_3ccuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.656631, 0)
+visible = false

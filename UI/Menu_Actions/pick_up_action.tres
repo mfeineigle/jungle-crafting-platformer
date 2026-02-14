@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PickUpAction" load_steps=3 format=3 uid="uid://dwdnjk5cgwhda"]
+
+[ext_resource type="Script" uid="uid://bhlo0vjue2cgi" path="res://UI/Menu_Actions/pick_up_action.gd" id="1_6shvq"]
+[ext_resource type="Texture2D" uid="uid://b331wig87jx5x" path="res://Assets/pixel_art/pick_up.jpg" id="1_hyxx7"]
+
+[resource]
+script = ExtResource("1_6shvq")
+icon = ExtResource("1_hyxx7")

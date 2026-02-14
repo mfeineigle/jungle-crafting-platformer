@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://cvwe42ewc47yh"]
+
+[ext_resource type="PackedScene" uid="uid://ccyttk08i3ps5" path="res://Assets/blender_stuff/rock_ledge_falling.blend" id="1_7mhk7"]
+[ext_resource type="Script" uid="uid://s25o5nlj0pfm" path="res://Scripts/Props/rock_ledge_falling.gd" id="2_p3ykj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7mhk7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3ykj"]
+size = Vector3(1.994873, 0.46655273, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mhk7"]
+
+[sub_resource type="Animation" id="Animation_p3ykj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rock_ledge_falling:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rock_ledge_falling:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hn81w"]
+resource_name = "rumble"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rock_ledge_falling:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.08640171, 0, 0), Vector3(-0.015428783, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rock_ledge_falling:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.20526816), Vector3(0, 0, 0.17044887), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v8u1b"]
+_data = {
+&"RESET": SubResource("Animation_p3ykj"),
+&"rumble": SubResource("Animation_hn81w")
+}
+
+[node name="rock_ledge_falling" type="RigidBody3D" unique_id=2093818292]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_7mhk7")
+sleeping = true
+freeze = true
+script = ExtResource("2_p3ykj")
+
+[node name="rock_ledge_falling" parent="." unique_id=1056669009 instance=ExtResource("1_7mhk7")]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=175051040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020751953, -0.11071777, 0)
+shape = SubResource("BoxShape3D_p3ykj")
+debug_color = Color(0.1764706, 0.6431373, 0, 0.9647059)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=568576623]
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1439304981]
+shape = SubResource("BoxShape3D_7mhk7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=986520195]
+libraries/ = SubResource("AnimationLibrary_v8u1b")

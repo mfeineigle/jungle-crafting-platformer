@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bl1hrb6u7bymj"]
+
+[ext_resource type="Script" uid="uid://c26tggxvolnvl" path="res://Scripts/Items/ladder_preview.gd" id="1_4ho7j"]
+[ext_resource type="PackedScene" uid="uid://bcxsrnabcud4l" path="res://Buildable/ladder_segment.tscn" id="2_1votk"]
+[ext_resource type="PackedScene" uid="uid://do37clkxir6k2" path="res://Buildable/ladder.tscn" id="3_htnh5"]
+
+[node name="Node3D" type="Node3D" unique_id=136144414]
+script = ExtResource("1_4ho7j")
+item_path = "res://Items/Resources/ladder.tres"
+ladder_segment_scene = ExtResource("2_1votk")
+ladder = ExtResource("3_htnh5")

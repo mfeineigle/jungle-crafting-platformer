@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://bvd1epxfw20ue"]
+
+[ext_resource type="PackedScene" uid="uid://dkudeqbrcpnf4" path="res://Buildable/glider.tscn" id="1_2rbvt"]
+[ext_resource type="Script" uid="uid://8g1k5ly4ship" path="res://Items/Resources/Item.gd" id="1_yieer"]
+[ext_resource type="Texture2D" uid="uid://bne8kflf6evqt" path="res://Assets/pixel_art/glider.png" id="2_quxaq"]
+[ext_resource type="Resource" uid="uid://bk8jxl4qoxmyf" path="res://Items/Resources/stick.tres" id="4_1ra0e"]
+[ext_resource type="Resource" uid="uid://dnyit1mc40640" path="res://Items/Resources/leaf.tres" id="5_nauq1"]
+
+[resource]
+script = ExtResource("1_yieer")
+id = "glider"
+display_name = "Glider"
+icon = ExtResource("2_quxaq")
+inputs = Array[ExtResource("1_yieer")]([ExtResource("4_1ra0e"), ExtResource("4_1ra0e"), ExtResource("5_nauq1")])
+buildable = ExtResource("1_2rbvt")
+metadata/_custom_type_script = "uid://8g1k5ly4ship"

@@ -1,0 +1,67 @@
+@tool
+extends Node3D
+@export var mesh: MeshInstance3D
+@export var area : Area3D
+
+enum FlowDir {
+	N, ## North
+	NE, ## Northeast
+	E, ## East
+	SE, ## Southeast
+	S, ## South
+	SW, ## Southwest
+	W, ## West
+	NW, ## Northwest
+	DOWN, ## Down
+	UP, ## Up
+}
+
+const FLOW_DIR_VECTORS := [
+	Vector3( 0, 0, -1), # N
+	Vector3( 1, 0, -1), # NE
+	Vector3( 1, 0,  0), # E
+	Vector3( 1, 0,  1), # SE
+	Vector3( 0, 0,  1), # S
+	Vector3(-1, 0,  1), # SW
+	Vector3(-1, 0,  0), # W
+	Vector3(-1, 0, -1), # NW
+	Vector3( 0,-1,  0), # DOWN
+	Vector3( 0, 1,  0), # UP
+]
+
+func get_flow_dir():
+	return -FLOW_DIR_VECTORS[flow_dir].normalized()
+
+
+## Direction of the lava flow
+@export var flow_dir: FlowDir = FlowDir.N : set = set_flow_dir
+@export_range(0, 7) var flow_speed: float = 0.0 : set = set_flow_speed
+
+
+func _ready() -> void:
+	area.body_entered.connect(_on_body_entered)
+	area.body_exited.connect(_on_body_exited)
+	_apply_shader_params()
+	
+func set_flow_dir(value: FlowDir):
+	flow_dir = value
+	_apply_shader_params()
+	
+func set_flow_speed(value: float):
+	flow_speed = value
+	_apply_shader_params()
+
+func _apply_shader_params() -> void:
+	if mesh:
+		mesh.set_instance_shader_parameter("flow_speed", flow_speed)
+		mesh.set_instance_shader_parameter("flow_dir_index", flow_dir)
+
+func _on_body_entered(body):
+	if body.is_in_group("player"):
+		print(body, " entered the liquid")
+		body.enter_water(get_flow_dir(), flow_speed)
+
+func _on_body_exited(body):
+	if body.is_in_group("player"):
+		print(body, " left the liquid")
+		body.exit_water()

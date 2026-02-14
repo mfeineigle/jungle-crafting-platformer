@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://3rr4uyg2mcjc"]
+
+[ext_resource type="PackedScene" uid="uid://dg2rr7g54fcii" path="res://Assets/blender_stuff/vine_group.blend" id="1_lwcyb"]
+[ext_resource type="Script" uid="uid://dxsyj2w4rd2o7" path="res://Scripts/Props/vine_group.gd" id="2_wy2p2"]
+
+[node name="vine_group" unique_id=233995421 instance=ExtResource("1_lwcyb")]
+script = ExtResource("2_wy2p2")
+wind_direction = Vector3(0, 1, 0)
