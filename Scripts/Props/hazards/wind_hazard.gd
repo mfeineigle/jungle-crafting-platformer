@@ -14,14 +14,12 @@ var is_wind_blowing: bool
 
 var _target_visual_strength: float = 0.0
 var _current_visual_strength: float = 0.0
-var _original_aabb: AABB
 
 func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_exited.connect(_on_body_exited)
 	Wind.wind_strength_changed.connect(_on_wind_strength_changed)
 	particles.emitting = false
-	_original_aabb = particles.visibility_aabb
 
 
 func _on_wind_strength_changed(strength) -> void:
