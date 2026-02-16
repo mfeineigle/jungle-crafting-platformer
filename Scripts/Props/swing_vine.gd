@@ -1,12 +1,15 @@
 extends Collectible
 
 @onready var end_marker: Marker3D = $end_marker
+var is_swinging: bool = false
 
 func interact_action(player: Player):
 	player.is_movement = false
-	do_the_swing(player, player.global_position, end_marker.global_position, 2.0, 2.0)
+	if not is_swinging:
+		do_the_swing(player, player.global_position, end_marker.global_position, 2.0, 2.0)
 
 func do_the_swing(player: Player, start_pos: Vector3, end_pos: Vector3, peak_height: float = 5.0, duration: float = 1.0):
+	is_swinging = true
 	var tween := get_tree().create_tween()
 
 	tween.tween_method(
@@ -27,5 +30,6 @@ func _update_swing(t: float, player: Player, start_pos: Vector3, end_pos: Vector
 	
 func _on_swing_finished(player: Player):
 	player.is_movement = true
+	is_swinging = false
 	
 	
