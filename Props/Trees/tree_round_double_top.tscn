@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://drrexa0f85rsr"]
+
+[ext_resource type="PackedScene" uid="uid://b2a2sdggv0rur" path="res://Assets/blender_stuff/tree_round_double_top.glb" id="1_abhhs"]
+
+[node name="tree_round_double_top" unique_id=141929968 instance=ExtResource("1_abhhs")]
