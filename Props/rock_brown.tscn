@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c2ovum5nv7swl"]
+
+[ext_resource type="PackedScene" uid="uid://2yqnshdi2wsh" path="res://Assets/blender_stuff/rock_brown.blend" id="1_tas1w"]
+
+[node name="rock_brown" unique_id=336797138 instance=ExtResource("1_tas1w")]

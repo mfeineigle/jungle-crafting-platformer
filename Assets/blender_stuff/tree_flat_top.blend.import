@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5dsi3nkgodfc"
-path="res://.godot/imported/fern_1.blend-9ef1a0e12e9757f679b9612e6637773b.scn"
+uid="uid://yeml451csj0n"
+path="res://.godot/imported/tree_flat_top.blend-174ea3bc3a95dee426054c5859d7081b.scn"
 
 [deps]
 
-source_file="res://Assets/blender_stuff/fern_1.blend"
-dest_files=["res://.godot/imported/fern_1.blend-9ef1a0e12e9757f679b9612e6637773b.scn"]
+source_file="res://Assets/blender_stuff/tree_flat_top.blend"
+dest_files=["res://.godot/imported/tree_flat_top.blend-174ea3bc3a95dee426054c5859d7081b.scn"]
 
 [params]
 
