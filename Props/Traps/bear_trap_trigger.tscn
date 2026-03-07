@@ -8,3 +8,4 @@ collision_mask = 5
 script = ExtResource("1_rtxmt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=872906033]
+debug_color = Color(0.7647059, 0.38039216, 0.2509804, 1)
