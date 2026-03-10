@@ -67,6 +67,7 @@ var wind_acceleration = 1500.0
 @onready var ground_shadow: Sprite3D = $GroundIndicator/GroundShadow
 @onready var ground_ray: RayCast3D = $GroundIndicator/GroundRay
 
+@onready var is_dead: bool = false
 
 func _ready() -> void:
 	if get_tree().get_nodes_in_group("main_menu"):

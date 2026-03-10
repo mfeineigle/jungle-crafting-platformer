@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://im3nsgpi8ln8" path="res://Assets/blender_stuff/platform.blend" id="1_2dftf"]
 [ext_resource type="Script" uid="uid://jsosrd7i0udc" path="res://Scripts/Levels/level_1.gd" id="1_pp47a"]
 [ext_resource type="PackedScene" uid="uid://1f1p5lcwdttp" path="res://Assets/blender_stuff/rock_wall.blend" id="2_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://uobuip56omu0" path="res://Player.tscn" id="2_jd565"]
 [ext_resource type="PackedScene" uid="uid://mm4t0705eltt" path="res://Props/Vines/swing_vine.tscn" id="2_k7tvq"]
 [ext_resource type="PackedScene" uid="uid://cc0bsslqrr3g2" path="res://Props/floors/floor_dirt.tscn" id="3_1fphk"]
 [ext_resource type="PackedScene" uid="uid://k2mfinmissso" path="res://Assets/blender_stuff/rock_ledge.blend" id="3_bcbcq"]
@@ -46,6 +47,7 @@ tonemap_mode = 2
 
 [node name="Level1" type="Node3D" unique_id=1544576828 groups=["level"]]
 script = ExtResource("1_pp47a")
+player_scene = ExtResource("2_jd565")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=991891665]
 environment = SubResource("Environment_r3fl7")

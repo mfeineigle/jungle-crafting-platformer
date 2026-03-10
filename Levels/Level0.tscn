@@ -2,6 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://bc3ahwiy3ursw" path="res://Props/mesh_lib.meshlib" id="1_6sq0g"]
 [ext_resource type="Script" uid="uid://t28wjyjtbgrv" path="res://Scripts/Levels/level.gd" id="1_rwetj"]
+[ext_resource type="PackedScene" uid="uid://uobuip56omu0" path="res://Player.tscn" id="2_qpfp8"]
 [ext_resource type="PackedScene" uid="uid://b6434eo6lswrs" path="res://Props/walls/rock_wall.tscn" id="3_6m7ph"]
 [ext_resource type="PackedScene" uid="uid://dest5ugxp5krp" path="res://Props/floors/rock_ledge.tscn" id="4_bgmvv"]
 [ext_resource type="PackedScene" uid="uid://cvwe42ewc47yh" path="res://Props/floors/rock_ledge_falling.tscn" id="6_5j4ii"]
@@ -13,6 +14,7 @@
 
 [node name="Level0" type="Node3D" unique_id=1278433630 groups=["level"]]
 script = ExtResource("1_rwetj")
+player_scene = ExtResource("2_qpfp8")
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1880062779]
 mesh_library = ExtResource("1_6sq0g")

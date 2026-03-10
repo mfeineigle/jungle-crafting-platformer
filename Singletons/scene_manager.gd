@@ -8,6 +8,15 @@ var _current_scene: PackedScene
 var _current_path: String
 var _progress := []
 
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+func reload_current_scene() -> void:
+	if _current_path.is_empty():
+		push_error("No scene to reload")
+		return
+	var packed := load(_current_path) as PackedScene
+	load_scene(packed)
 
 func load_scene(scene: PackedScene) -> void:
 	if scene == null:
