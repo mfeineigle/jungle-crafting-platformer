@@ -12,6 +12,7 @@ func _on_scene_loaded(scene: Node) -> void:
 		world.add_child(scene)
 	elif scene.is_in_group("level"):
 		world.add_child(scene)
+		Signals.checkpoints_cleared.emit()
 		scene.call_deferred("take_player")  # let level handle positioning
 	elif scene.is_in_group("ui"):
 		ui_root.add_child(scene)

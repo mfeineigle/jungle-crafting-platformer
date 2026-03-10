@@ -19,3 +19,7 @@ signal learned_recipe(recipe: String)
 signal open_lvl_select
 signal loaded_level
 signal trap_triggered(trap)
+signal player_died
+signal reload_checkpoint
+signal checkpoints_cleared
+signal checkpoint_activated

@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://m878vpabghea"]
+
+[ext_resource type="FontFile" uid="uid://don8gk1hegywe" path="res://Assets/SimpleGothicFont.otf" id="1_qj1w0"]
+
+[resource]
+Label/colors/font_color = Color(1, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("1_qj1w0")

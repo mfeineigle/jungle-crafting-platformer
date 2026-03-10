@@ -24,6 +24,7 @@ func _on_body_entered(body) -> void:
 		# turn this checkpoint back on
 		active_orb.visible = true
 		animation_player.play("active")
+		Signals.checkpoint_activated.emit()
 
 func set_active_orb(active: bool) -> void:
 	active_orb.visible = active

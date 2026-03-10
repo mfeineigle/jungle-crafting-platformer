@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dqtrdkorsas5b"]
+
+[ext_resource type="Script" uid="uid://c51r1ewuwxtsa" path="res://Scripts/UI/died_ui.gd" id="1_35oqt"]
+[ext_resource type="Theme" uid="uid://m878vpabghea" path="res://UI/died_theme.tres" id="2_1jlr3"]
+
+[sub_resource type="Theme" id="Theme_uxhvu"]
+
+[node name="DiedUI" type="Control" unique_id=1370436368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_35oqt")
+
+[node name="Panel" type="Panel" parent="." unique_id=1324643099]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=954094648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.5
+offset_top = -218.5
+offset_right = 164.5
+offset_bottom = 218.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_uxhvu")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer" unique_id=1082987029]
+layout_mode = 2
+theme_override_constants/margin_bottom = 222
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer" unique_id=354028343]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_1jlr3")
+text = "You Died"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer" unique_id=274183621]
+layout_mode = 2
+
+[node name="reload_checkpoint" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1635771020]
+layout_mode = 2
+text = "Reload Last Checkpoint"
+
+[node name="reload_level" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=1799550396]
+layout_mode = 2
+text = "Reload Level"
+
+[node name="quit" type="Button" parent="Panel/VBoxContainer/VBoxContainer" unique_id=2084816149]
+layout_mode = 2
+text = "Quit to Menu"
