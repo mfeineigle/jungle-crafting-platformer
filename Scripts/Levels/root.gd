@@ -16,3 +16,5 @@ func _on_scene_loaded(scene: Node) -> void:
 		scene.call_deferred("take_player")  # let level handle positioning
 	elif scene.is_in_group("ui"):
 		ui_root.add_child(scene)
+	else:
+		push_error("no group")
