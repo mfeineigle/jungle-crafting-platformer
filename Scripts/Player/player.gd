@@ -29,6 +29,7 @@ var is_movement: bool = true
 var jump_available: bool = false
 var was_on_floor: bool = false
 var is_in_air: bool = true
+var is_deadly_fall: bool = false
 @onready var jump_buffer_timer: Timer = $Timers/JumpBufferTimer
 @onready var coyote_timer: Timer = $Timers/CoyoteTimer
 
@@ -222,6 +223,9 @@ func handle_normal_movement(delta):
 		else:
 			jump_buffer_timer.start()
 	if is_on_floor():
+		if is_deadly_fall:
+			Signals.player_died.emit()
+			is_deadly_fall = false
 		if is_in_air: # must check this before jump buffer
 			animation_system.jump_animation.play("land")
 		is_in_air = false
@@ -237,6 +241,8 @@ func handle_normal_movement(delta):
 	# this must run after because move_and_slide() will be called
 	# at the end of this function, updating is_on_floor
 	was_on_floor = is_on_floor()
+	if velocity.y < -12:
+		is_deadly_fall = true
 	
 	if Input.is_action_just_released("jump") and velocity.y > 0:
 		velocity.y = JUMP_VELOCITY / 4.0  # slow accent on release
